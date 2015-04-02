@@ -1,0 +1,852 @@
+﻿Radeon Profile Tool, or RadeonPro for short, is a free, user friendly utility designed to unleash the power of AMD™ Radeon™ video graphics cards. RadeonPro applies user defined profiles upon game start, just define once the desired 3D settings for each game and have all those settings applied every time you play, automatically!
+
+No more desktop shortcuts to click on or hotkeys to remember, create the profile once and play always the way you like it!
+
+Official web site: http://www.radeonpro.info
+Offcial Q&A site: http://community.radeonpro.info
+
+Minimum requirements:
+- Microsoft Windows Vista SP2
+- Microsoft .NET Framework 2.0
+- Microsoft DirectX Runtime June 2010 or newer
+- ATI Radeon HD 2000 series graphics card or newer
+
+Ideal requirements:
+- Microsoft Windows 7 x64 recommended
+- Microsoft .NET Framework 3.5
+
+Updates
+-------
+11/04/2013 - New build 1.1.1.0
+
+- New: Added support for 64-bit applications
+- New: Improved hardware detection
+- New: Improved Windows 8 compatibility
+- New: Movie capture feature with real-time Motion JPEG compression (DirectX 9/10/10.1/11) and OpenDML (AVI 2.0) support
+- New: FXAA support (DirectX 9/10/10.1/11 and OpenGL)
+- New: FXAA can be activated/deactivated during the game (configure the hotkey on RadeonPro's Settings screen)
+- New: SMAA support (DirectX 9/10/10.1/11)
+- New: SMAA can be activated/deactivated during the game (configure the hotkey on RadeonPro's Settings screen)
+- New: Dynamic Vsync Control (DVC) support. This feature controls how vertical synchronization is applied at rendering time, automatically turning it off when frame rate is below monitor's refresh rate to reduce stuttering and turning it on when framerate is above or equal to monitor's refresh rate, improving smoothness.
+- New: DVC can be activated/deactivated during the game with SHIFT+HOME key
+- New: Dynamic Framerate Control (DFC) support. This feature acts like a frame rate limiter with smoothness control, just set a frame rate target and RadeonPro will try to keep it as close as possible while maintaining frame rendering times close to each other to avoid stuttering.
+- New: DFC can be activated/deactivated during the game with SHIFT+END key
+- New: DFC feature's frame rate target is adjustable in real time, press SHIFT+INSERT to increase the limit and SHIFT+DELETE to decrease it
+- New: Lock frame rate up to monitor's refresh rate. This feature limits internal frame rendering times accordingly to refresh rate (i.e. 60 Hz = 16.67 ms) instead of waiting vertical retrace.  
+- New: On-Screen Display panel, showing current status of some RadeonPro features on top of game screen. Press PAGEDOWN key to toggle between full panel/reduced panel/hidden.
+- New: OSD panel can be made visible since game start either globally or at profile level, just configure it on OSD tab
+- New: OSD panel versions can be disabled either globally or at profile level, just configure it on OSD tab
+- New: Real time GPU monitoring with On-Screen Display support. GPU monitoring displays your video cards temperatures, utilization, FAN speed and VRAM utilization
+- New: Current date/time/FPS and actual playing time can be displayed at OSD
+- New: Ambient Occlusion support (DirectX 9/10/10.1/11). Please bear in mind that not all games can be forced to use Ambient Occlusion. RadeonPro currently supports Horizon Based Ambient Occlusion (HBAO) and Volumetric Ambient Occlusion, different algorithms might be added in future. A list of supported games can be seen at end of changelog (see complete listing at Program Settings/Ambient Occlusion), the list will be updated based on author's tests and also based on feedback from users that have access to Ambient Occlusion debugging tool (TBD).
+- New: Better keyboard handling (i.e. fixes some games that don't allow OSD control or change of FPS corner)
+- New: Improved hook handling with better Steam overlay compatibility
+- New: OverDrive controls allow basic overclocking, manual cooler fan speed and PowerTune adjustments (available only at profile level)
+- New: Added option to display new CrossfireX logo on OSD when a CrossfireX capable system is detected
+- New: Added proper support for Direct3D9Ex games (i.e. Blades of Time, Fallout New Vegas, World of Tanks etc.)
+- New: Improved OpenGL support and bug fixes
+- New: Built-in SweetFX integration, allowing global and per game SweetFX effect shaders configuration. SweetFX can be used on any DirectX 9/10/10.1/11 games running on 32-bit or 64-bit. Configure SweetFX at RadeonPro settings and remove all 3rd party injector's DLLs from game directories if you want to use RadeonPro's SweetFX integration.
+- New: Improved compatibility with Uplay and Origin overlay modules
+- New: The program now warns the user when RadeonPro process is executing with elevated privileges on an UAC enabled system. Running RadeonPro with elevated privileges might break application detection, it's recommended executing RadeonPro with normal privileges (either non-admin or admin account, but not with elevated rights - i.e. don't use Run as Administrator)
+- New: Added support for AMD Radeon R6/R9 Series (New OverDrive settings are not yet supported in R9 290 Series)
+- Fixed: Incorrect FPS meter when AMD Eyefinity is in use
+- Fixed: DVC/DFC now works with AMD Eyefinity
+- Fixed: Some games that used to hang at startup when API monitoring was active are now playable (i.e. STALKER Call of Pripyat)
+- Fixed: Screenshots now works in DirectX 10/11 with R10G10B10A2/B8G8R8A8 formats used by some games (Dirt 3/Showdown, F3AR)
+- Changed: German translation update (thanks to Lennart Brüggemann)
+- Changed: improved OSD rendering performance on DirectX 10/11 games
+- Removed: SVG file creation at benchmark finish
+- Removed: CrossfireX bar; to monitor GPU utilization, use OSD options instead
+- Removed: alternate AMD Radeon logo
+- Removed: skins (all). They will be replaced by new Web skins feature. Anyone with HTML and Javascript skills will be able to create skins for RadeonPro.
+- Removed: Aggressive API detection (useless with new hook handler)
+- Known issues:
+-- Vsync is a bit broken in DirectX 9 for 64-bit apps
+-- DFC/DVC may not work as expected in OpenGL apps
+-- Movie's audio may go out of sync when target framerate is too high compared to sustained framerate
+- Ambient Occlusion support list (DirectX 9 only when API omitted)
+-- 2K Sports NBA 2K11
+-- 2K Sports NBA 2K13
+-- Alan Wake
+-- Aliens vs Predator (DX9/DX11)
+-- Assassin's Creed Brotherhood
+-- Batman Arkham Asylum
+-- Batman Arkham City (DX9/DX11)
+-- Bioshock (DX9/DX10)
+-- Bioshock 2 (DX9/DX10)
+-- Blades of Time
+-- BLUR
+-- Brothers in Arms - Highway to Hell (have issues with out of position shadows during cut scenes when non 16:9 resolution is used)
+-- Bulletstorm
+-- James Bond 007 - Blood Stone
+-- Call of Duty 2
+-- Call of Duty: BlackOps
+-- Colin McRae DiRT
+-- Darksiders
+-- Darksiders II
+-- Dead Space
+-- Dead Space 2
+-- Devil May Cry 4
+-- Diablo III
+-- DiRT 2 (DX9/DX11 - only works with AA 0x)
+-- Dishonored
+-- F.3.A.R. (DX11)
+-- F.E.A.R.
+-- Formula One 2012 (DX11)
+-- FIFA 2012
+-- FIFA 2013
+-- Grand Theft Auto IV
+-- Hard Reset
+-- Ice Age 4
+-- Mass Effect 3
+-- Need for Speed Hot Pursuit
+-- Of Orcs and Men
+-- Orcs Must Die!
+-- Orcs Must Die! 2
+-- Racedriver GRID
+-- rFactor
+-- S.T.A.L.K.E.R. Shadow of Chernobyl
+-- Sonic Adventure 2
+-- Sonic Generations
+-- Street Fighter IV
+-- Street Fighter X Tekken
+-- The Amazing Spider-Man
+-- The Elder Scrolls V: Skyrim
+-- Tomb Raider Anniversary
+-- Tomb Raider Underworld
+-- Torchlight II
+-- Trine
+
+
+02/09/2011 - New build 1.1.0.6 (skins are temporarily unavailable but will be restored soon)
+
+- Changed: the Getting Started Wizard won't show up anymore between version upgrades
+- Changed: new translation submission method
+- New: initial Italian translation (thanks to Alessandro Camardo, aka |ALE|)
+
+02/05/2011 - New build 1.1.0.5 (skins are temporarily unavailable but will be restored soon)
+
+- Fixed: crash at program startup when running with a non-administrator account
+- Fixed: context-menu games list not updated after unused profile cleaning
+
+02/04/2011 - New build 1.1.0.4 (skins are temporarily unavailable but will be restored soon)
+
+- Fixed: profile not being restored when old style profile list is in use
+- Fixed: German translation was missing 6x value for Tessellation control, causing an non-fatal error message when the slider is moved to the rightmost position
+- Fixed: AMD System monitor added to API monitoring blacklist to avoid rendering issues
+- Changed: CrossfireX bar does not enforce vsync off anymore (turn vsync off manually if you want to use the CrossfireX bar without graphics stuttering)
+- Changed: Spanish translation update 
+
+02/03/2011 - New build 1.1.0.3 (skins are temporarily unavailable but will be restored soon)
+
+- Fixed: screen blinks on Windows XP systems whenever a program is started due to Global profile application
+
+02/03/2011 - New build 1.1.0.2 (skins are temporarily unavailable but will be restored soon)
+
+- Fixed: Aero glass not being applied
+- Fixed: some dialogs don't appear translated
+- Fixed: API monitoring being applied when the application doesn't have a profile and "Disable API monitoring for programs not listed in my profiles list" option is enabled
+- Fixed: alternate AMD logo can cause rendering errors on some DX10/DX10.1 game (observed by me only on HAWX)
+- Changed: triggers column width is now resized to accommodate the trigger file name
+- New: added option to switch profile list to old style (no grouping) mode
+- New: added option to apply a profile manually
+
+02/01/2011 - New build 1.1.0.1 (skins are temporarily unavailable but will be restored soon)
+
+- Fixed: program crash while saving settings
+- Fixed: missing DLL prevents auto-updated installations from working (re-do the auto-update to download the missing file)
+- Fixed: Backup/Restore window doesn't appear translated
+- Fixed: Global/Profile labels don't appear translated
+- New: initial German translation (thanks to Caveman)
+
+01/31/2011 - New build 1.1.0.0 (skins are temporarily unavailable but will be restored soon)
+
+- Fixed: Portuguese translation
+- Fixed: crash when GLDirect (http://sourceforge.net/projects/gldirect/) is used and API monitoring is active
+- Fixed: GPU detection fails when old drivers traces are found on registry causing D3D tweaks and/or CrossfireX to not work properly
+- Fixed: Compatibility profiles (AA/CFX) don't work with Catalyst 11.1a and HD 6900 series cards
+- Fixed: program window position is moved outside the screen bounds when it is currently minimized and the tray icon is double-clicked, causing the window move to an unusable position until next program restart
+- Fixed: API monitoring gets enabled even when a game doesn't have a profile and "Disable API monitoring for programs not listed in my profiles list" option is enabled on Settings
+- Changed: removed CFAA Narrow/Wide-tent filters when a HD 6000 series card is detected
+- Changed: removed TAA controls (not supported anymore by drivers)
+- New: Profiles list enhancement with grouping by Recently added, Favorites and Recently played
+- New: profiles purging (for removing deleted/uninstalled games)
+- New: profile search/filter
+- New: translation tool
+- New: Getting start wizard for RadeonPro newcomers
+- New: EQAA support for HD 6900 series
+- New: Integration with online user's guide. Context-sensitive help for the area where the mouse pointer is resting is displayed by pressing F1 key
+- New: initial Spanish translation (thanks to Florentino Sainz, aka Black_ice_Spain)
+
+12/16/2010 - New build 1.0.11.2
+
+- Changed: MLAA and new features are activated even when some registry keys are missing
+- Changed: Windows XP users can use profiles when a Radeon graphics card is not detected (temporary measure to allow program utilization on Windows XP)
+
+12/15/2010 - New build 1.0.11.1
+
+- Fixed: AMD logo always displayed on OpenGL games
+- Fixed: registry read errors at program startup
+- Fixed: Windows XP registry access error at startup causing the program to end prematurely
+- Fixed: incorrect FPS counter on some D3D9 games (NFS Pro Street, ARMA II and others). Please note that some games (e.g. Dragon Age) may not display the FPS counter in some places. It will be fixed in a future build.
+- Changed: new drivers features (MLAA, TFQ and SFO) are activated regardless driver support when an HD 5000 series or newer card is detected
+- New: a LOG file can be created at startup if the Scroll-lock key is kept pressed during RadeonPro initialization. The LOG file can be found at "My Documents\RadeonPro"
+
+11/29/2010 - New build 1.0.11.0
+
+- Fixed: AMD logo not being displayed under some conditions
+- Fixed: Global profile not restoring some properties due to missing values in XML file. Global profiles are now rebuilt at startup when new settings are introduced by the driver and their values are missing in currently saved global profile
+- Fixed: under certain circumstances LOD adjustment are set to incorrect values (incorrect integer value instead of decimal)
+- Fixed: Xfire tool crashes at startup
+- New: RadeonPro can take screenshots preserving MLAA filtering. Works with D3D8/9/10/10.1/11 (turn on the option in settings before using, it's disabled by default due to performance and compatibility questions)
+- New: introducing OpenGL support for OSD functions (screenshots, benchmarks, etc.)
+- New: AMD Radeon logo can be displayed on OpenGL games (single and multi GPU)
+- New: scripting commands to start programs synchronously and to read from registry. See Scripting Guide to learn more
+- New: Community feature - find and share tips about game profiles (postponed to next release)
+- Enhanced: program settings, custom compatibility profiles and custom driver compatibility settings can be saved/restored using the backup/restore features
+- Changed: removed Shell references to make the program Windows XP compatible again  (some features and functionalities may still be missing, however)
+- Changed: improved settings dialog for easy visualization
+
+10/30/2010 - New build 1.0.10.4
+
+- Fixed: working directory is now used when Play is selected from profiles list context menu
+- Fixed: screenshot function not working on some games (e.g. HAWX DX10, HAWX DX11, World of Warcraft DX11)
+- Fixed: character textures do not load in World of Warcraft when using DX11
+- Fixed: Global profile settings inherited by profiles don't get applied at game startup
+- New: RadeonPro automatically activate MLAA and new features presented by Catalyst 10.10a/10.10c when the driver is detected at program's startup time
+- New: Support for Morphological Filtering (MLAA) and other Catalyst 10.10a/c features (HD 5000/HD 6000 only)
+- New: AMD Radeon logo can be displayed on D3D games (single and multi GPU)
+- New: RadeonPro now watches for forced vsync option, if the profile enforces vsync always on and frame rate goes over the refresh rate, the program will give the user an option to try another API detection method the next time the profile is used
+- New: Graphics hardware information - click on ATI Radeon icon at bottom of program's window to view your graphics hardware data
+- Changed: Driver compatibility DLL files are always copied when selected
+- Enhanced: The New Profile Wizard now shows only relevant options depending on video card (no more SuperSampling settings on HD 4000 series cards, for example)
+-- Skins updates
+--- ATI Ruby (both)
+---- Fixed: list drawing bugs
+
+10/16/2010 - New build 1.0.10.3
+
+- Fixed: Driver compatibility bugs
+- Fixed: on some HDMI connected monitors the vertical refresh rate can go down to 24Hz while starting games with RadeonPro API monitoring active
+- New: working directory can be set for each game, look for the field at Launcher tab
+-- Skin updates
+--- Verde
+---- New: added menu options to new features (Manage My Drivers and Manage Custom Profiles, look for them at File menu) and options to set Driver compatibility
+
+10/13/2010 - New build 1.0.10.2
+
+- Fixed: LOD adjustment not being saved
+- Fixed: random crashes during games startup (Test Drive Unlimited-DX9, Street Fighter IV-DX9, Dirt 2-DX11)
+- Changed: Compatible List View Rendering is now active by default on new installations
+- New: add custom executables to the Anti-Aliasing and CrossfireX compatibility profiles
+- New: Driver compatibility option to allow utilization of previous Catalyst drivers DLLs (must be enabled in Settings prior to utilization, carefully read the disclaimer at Settings screen!!!)
+- New: sound notifications can be customized. Events like Profile activated, Video card spoof, Triple-buffering activated, among others, can be customized using the Windows Control Panel. See Change System Sounds and look for RadeonPro entries on list
+
+10/10/2010 - New build 1.0.10.1
+
+- Fixed: some profile properties cannot be unset after being set (e.g. Video Spoof, Aggressive API detection and others settings)
+- Fixed: D3D tweaks (forced vsync/triple-buffering) not working in some games. Try Aggresive API detection if it's not working. To quickly identify if it's working or not, try forcing Double vsync to see if framerate gets capped by 30 FPS (or half of vertical refresh rate).
+
+10/08/2010 - New build 1.0.10.0
+
+- Fixed: black screen with some DX9 games
+- Fixed: Age of Conan (DX10) and other DX10 games crashing at startup
+- New: tray icon context menu speed optimizations
+- New: option on Settings/Advanced tab to disable API monitoring for programs not listed in profiles list (it's enforced disabled by default starting at this build)
+- New: added per profile option to disable OSD features (FPS counter, Screenshots, etc.), right-click the item in list to set/reset it. Use this option if you're getting kicked from Even Balance Punkbuster enabled servers when using RadeonPro's OSD features
+- New: current API in use is displayed on screen at game startup (can be disabled in Settings)
+
+09/29/2010 - New build 1.0.9.5
+
+- Fixed: CrossfireX bar not appearing on some systems with CrossfireX enabled adapter(s) present
+- Fixed: FPS counter not respecting windowed mode and game viewport causing it to jump to other screen locations when it's set to other position than top-left
+- Fixed: STALKER CoP and other games crashing at startup
+- Changed: reverted program activation through the tray icon by using double click instead of single click
+- Changed: minor tweaks to API detection code to favor better compatibility
+
+09/27/2010 - New build 1.0.9.4
+
+- Fixed: Aero bug
+- Fixed: API compatibility list gets cleared when RadeonPro is restarted
+- Fixed: Global profile saving Script settings and other non-global properties
+- Fixed: program window become invisible due to invalid desktop positions saved in configuration file
+- New: CrossfireX bar feature to display multi-GPU utilization (up to 2) while gaming. The CrossfireX bar can be toggled on/off using a hotkey defined in Settings. Tri and Quad-CrossfireX support will be added in a future build
+
+09/23/2010 - New build 1.0.9.3
+
+- Fixed: "Error saving settings" random bug
+- Fixed: removed DirectX Runtime June 2010 dependency which caused crashes in D3D10/D3D11 games on systems without that runtime version installed, minimum requirement now is February 2010 runtime: http://www.microsoft.com/downloads/en/details.aspx?FamilyId=2DA43D38-DB71-4C1B-BC6A-9B6652CD92A3&displaylang=en
+- Fixed: crash at Metro 2033 startup
+- Fixed: FPS counter not displayed on some D3D9 games
+
+09/22/2010 - New build 1.0.9.2
+
+- Fixed: possible memory leak in D3D11 games
+
+09/21/2010 - New build 1.0.9.1
+
+- Fixed: Forced vsync off not being saved correctly with all skins except Verde
+
+Updates
+-------
+09/21/2010 - New build 1.0.9.0
+
+- Fixed: "index_damaged" message is displayed when trying to start a game with some special characters present in path (i.e. Kane & Lynch, Command & Conquer)
+- Fixed: Steam no longer crashes if RadeonPro is finished and Steam is kept running
+- Fixed: random hiccups while scrolling pages or doing non related game tasks
+- Fixed: profiles backup feature not saving launcher settings
+- Fixed: program crash with Windows XP and .NET Framework 2.0 pre-SP2 due to a missing overloaded method [System.Threading.WaitOne(bool)]. If you got that error message, you should keep updated your operating system!
+- Fixed: restore option restoring all items instead of only checked items
+- Fixed: Monitoring option at tray icon context-menu don't change state
+- Changed: introduced new fail counter measures to avoid broken profiles due to unexpected program crashes
+- Changed: Global profiles are saved in a separated profile so they don't get messed by processes that don't terminate correctly
+- Changed: must check for main program's updates before downloading new skins
+- Changed: revamped FPS display and screenshot grabber engine with high-quality real time image resizer (Direct3D 8/9/10/11 are supported now, OpenGL support will be introduced in a future build)
+- Changed: RadeonPro Support Service is now started on demand
+- Changed: when a profile has a launcher defined and the game is started by RadeonPro through the Play option in Profiles' list context menu, the launcher is executed now instead of profile target executable
+- Changed: due to the way pressed keys are checked by the FPS/Screnshot engine, modifier support (Shift, Alt, Control) keys has been dropped. If your hotkeys stop working and you are using modifiers, please change them in settings and remove the modifier key
+- Changed: backup/restore items are now alphabetically sorted
+- New: update dialog now have an option to show the changelog before the download of updates
+- New: Benchmark feature
+- New: screenshot grabber engine can resize screenshots in real-time
+- New: screenshot grabber engine can insert an image overlay over the screenshot at a pre-defined image corner and position
+- New: FPS number overlay can be hidden from screenshots
+- New: video spoof feature is now available also on Direct3D 8/10/10.1/11 (previously was supported only on Direct3D 9)
+- New: forced triple-buffering and/or forced vsync on/off can now be used with games that don't have a profile defined (e.g. any Direct3D 8/9/10/11 application)
+- New: forced vsync on allows the activation of a new feature: Double Vsync, which limits the framerate to half of the current refresh rate (i.e. 60 Hz LCD displays will limit framerate to 30 FPS instead of 60 FPS). Works only with full-screen games, windowed games will use normal vsync
+- New: FPS display, screenshot grabber, video spoof feature and forced display refresh rate can be used with games that don't have a profile defined (e.g. any Direct3D 8/9/10/11 application)
+- New: display refresh rate can be specified as part of profile or global settings (experimental feature, please report if it worked for you)
+- Removed: Start with Skin shortcut from JumpLists
+--- Verde
+---- New: added shortcut to Launcher Settings in Anti-Aliasing/CrossfireX settings page
+---- Fixed: LOD adjustment is not being saved
+
+08/22/2010 - New build 1.0.8.7
+
+- Fixed: RadeonPro causing heavy stuttering in some games that don't have a profile defined
+- Changed: added option "None" to Launcher type
+-- Skin updates
+--- Verde
+---- Fixed: Launcher settings not being saved
+
+Known issues:
+- Auto-updater may fail in some cases
+- Screenshot function not working in some games
+
+08/22/2010 - New build 1.0.8.6
+
+- Fixed: random crashes while starting programs (still testing, please bear with me :-)
+- Fixed: profiles not activating on build 1.0.8.5
+- Changed: auto-update from build 1.0.8.5 should work now
+
+Known issues:
+- Auto-updater may fail in some cases
+- Screenshot function not working in some games
+
+08/21/2010 - New build 1.0.8.5
+
+- Fixed: random crashes while starting programs (still testing, please bear with me :-) 
+
+Known issues:
+- Auto-updater may fail in some cases
+- Screenshot function not working in some games
+
+08/21/2010 - New build 1.0.8.4
+
+- Fixed: random crashes while starting programs (still testing, please bear with me :-)
+- Fixed: scripts not working on first time use when the program is configured to start minimized
+- Fixed: start parameters not being applied correctly
+- New: added Launcher settings for launcher based games
+
+Known issues:
+- Auto-updater may fail in some cases
+- Screenshot function not working in some games
+
+08/20/2010 - New build 1.0.8.3
+
+- Fixed: random crashes while starting programs (still testing, please bear with me :-)
+- Changed: removed device id check at program startup, using device string instead
+- Changed: the installer won't run if RadeonPro is running, program must be closed before upgrading or uninstalling
+
+Known issues: Auto-updater may fail in some cases
+
+08/20/2010 - New build 1.0.8.2
+
+- Fixed: Random crashes while starting programs
+- New: the auto-updater now reports when and why a previous update failed
+
+08/19/2010 - New build 1.0.8.1
+
+- Fixed: Adaptive Anti-Aliasing not being correctly displayed after profile switching
+- Fixed: AppCrash dialog after skin download or skin change (the program starts fine thought)
+- Fixed: program icon gets duplicated after skin change
+- Changed: the installer now clears the Skins folder at version upgrade time to avoid crashes due to out-of-date skins
+- New: skins versions are now verified against the minimun version required by the main program, outdated skins can't be used and are deleted
+- New: new "Check for Skins" button in Skins Dialog
+- New: new option to uninstall a Skin
+
+08/19/2010 - New build 1.0.8.0
+
+- New: individual profiles can now be temporarily disabled, the program will warn the user when an existing profile have been skipped processing
+- New: launcher based (Steam, Games for Windows Live) games now can be forced to use another Anti-Aliasing or CrossfireX profile (OpenGL is not supported yet)
+- New: the error reporting dialog now sends (whenever possible) a detailed trace of internal application actions sequence for better error tracking and fixing
+- Fixed: launching an URL may fail on some systems
+- Fixed: the program may enter in an infinite load-unload loop if an error occurs in main window initialization and no skin is being used
+- Fixed: if main mutex cannot be created the program may fail silently
+- Fixed: if an instance of the program is already running and the program is started again, the program may fail silently if an IPC communication channel cannot be opened
+- Changed: HD 2000/3000/4000 Series now shows correct Adaptive Anti-Aliasing modes, Performance and Quality instead of Multisampling and Supersampling used by HD 5000 Series
+- Changed: the program window doesn't flash anymore at startup when it's configured to start mimized
+- Changed: the online error reporting dialog don't report errors anymore for older builds than the current one to avoid reporting errors already fixed by latest build (the program will inform the user to update the program)
+- Changed: small tweaks to the Add New Profile Wizard
+- Changed: JumpLists now show a bullet near the active monitoring option to indicate current status
+- Changed: LOD adjustment now can be set to zero to enforce negative LOD clamp (previous builds ignores LOD=0 by removing the entry from registry to emulate driver defaults when LOD is not set)
+
+07/26/2010 - New build 1.0.7.51
+
+- Changed: removed error checking for ResetVideoDriver as some users reported errors with new Catalyst 10.7 driver
+
+07/26/2010 - New build 1.0.7.50
+
+- Fixed: Current settings in bottom don't get reverted when Discard changes link is clicked
+- Fixed: removed delay while applying profiles in some conditions
+
+07/25/2010 - New build 1.0.7.49
+
+- Fixed: several Windows XP cosmetic issues
+- Fixed: several Windows XP bugs, including high CPU usage bug
+- Fixed: profiles were not being properly applied in Windows XP and some Windows Vista systems
+- Fixed: Global settings changing (display only) when program configuration is changed through Settings dialog
+- Fixed: enforced bounds checking around "GetSettings" and other parts of code to avoid out of bounds errors as reported by users using the error report dialog (thank you guys!)
+- Removed: direct overclocking support descontinued, overclock settings in actual profiles will be replaced by a pre-start event script.
+- New: Global settings now needs to be saved manually. When a setting is changed in Global scope, 2 links will be shown to either apply or discard the changes
+- New: RadeonPro Scripting Engine: execute scripts written in javascript plus RadeonPro extensions. Scripts can be executed when the game is started and after the game exits. Can be used for several and useful things, like loading an overclock profile when the game is loaded and loading another overclock profile to reset clocks to stock settings, among other things.
+- New: watch for new processes monitoring can be enabled or disabled through tray icon or Windows 7 JumpLists
+- Changed: RadeonPro now stops monitoring for new processes when a profile is active
+- Fixed: the installer now always terminate RadeonPro Support Service while upgrading through the full installer
+
+07/13/2010 - New build 1.0.7.48
+
+- Changed: bounds checking for all profile settings at load time in order to avoid errors while starting the program
+- Changed: Choose from Steam shall find more games now
+- Changed: added *.scr to filter list for select file dialogs
+- New: double-clicking the Readme.txt entry in Installed updates opens the file
+
+07/13/2010 - New build 1.0.7.47
+
+- Fixed: null reference in New Profile Wizard/Choose from Steam feature
+- Fixed: program failing to start minimized when Jump Lists are disabled in Settings
+- Changed: Choose from Steam shall find more games now
+
+07/13/2010 - New build 1.0.7.46
+
+- Fixed: null reference in New Profile Wizard/Choose from Steam feature
+
+07/12/2010 - New build 1.0.7.45
+
+- Fixed: several errors when Jump Lists are disabled in Settings
+- Fixed: program don't close to tray when Jump Lists option is disabled
+- Fixed: critical error in build 1.0.7.42 that prevents skins downloads and program updates. For users that have build 1.0.7.42 installed, please reinstall using latest full installer
+- Changed: New Profile Wizard Choose from Steam feature don't need to get installed games' information from internet anymore
+- New: shortcut in JumpList tasks to select a skin while starting RadeonPro
+-- Skin updates
+--- Verde
+---- Fixed: Global settings not refreshing issue
+
+- Known issues:
+-- Choose from Steam can't display all games from user's account
+
+07/12/2010 - New build 1.0.7.44
+
+- Fixed: error messages when Jump Lists are disabled in Taskbar options
+
+07/12/2010 - New build 1.0.7.43
+
+- Fixed: Profiles list background turned opaque in ATI Ruby and ATI Ruby2 skins
+
+07/11/2010 - New build 1.0.7.42
+
+- Changed: RadeonPro won't use JumpLists anymore when the option is disabled in Windows start menu configuration
+- New: New Profile Wizard can now choose games from user's Steam games
+
+07/09/2010 - New build 1.0.7.41
+
+- Fixed: deleted profiles were not removed from Favorites lists
+- Changed: Recently played list is now reorganized when a game already on list is played again
+- Changed: profiles list's context menus now show an option to remove a item that's currently on Favorites list
+- Changed: Games Explorer items are now sorted by game title
+- New: added options to set maximum items to show on JumpLists and maximum items to show on Recently played games, look for them at program Settings
+- Enhanced: when selecting a game from Games Explorer, the New Profile Wizard now detects multiple executables on game directory and displays a list so the user can pick the right one. May be handy when the Games Explore's item points to the launcher instead of the game executable.
+
+07/08/2010 - New build 1.0.7.40
+
+- Fixed: error validating steam path
+
+07/08/2010 - New build 1.0.7.39
+
+- Fixed: error on right-click RadeonPro tray icon when executables that don't have a default icon on executable image exists in launch items (fixed both in Launch and Favorites this time)
+
+07/08/2010 - New build 1.0.7.38
+
+- New: New Profile Wizard now can choose games from Games Explorer (Windows Vista or newer only)
+- Fixed: error on right-click RadeonPro tray icon when executables that don't have a default icon on executable image exists in launch items
+- Fixed: triggers not loading the main profile in some cases (i.e. Adapter Spoofing is configured on main profile but not being activated when the alias is executed)
+-- Skin updates
+--- Verde
+---- Added: Wizard toolbar button
+
+
+07/07/2010 - New build 1.0.7.37
+
+- New: Option in Settings to choose either Recently Played games are listed or not on Windows 7 JumpLists
+- New: Favorites can be accessed throught the tray icon. Right-click it and look for Favorites
+- New: Tray icon Launch and Favorites now show game icon
+- Fixed: Screenshot function stops working after ALT+TAB or other events
+
+07/07/2010 - New build 1.0.7.36
+
+- Changed: small update to JumpList
+
+07/07/2010 - New build 1.0.7.35
+
+- Fixed: start parameters not saved in backup in previous versions
+- Fixed: Favorites and Recently played lists are now kept between sessions
+- Added: New Profile Wizard can now save graphics settings to be used when the Wizard is opened again
+- Enhanced: New Profile Wizard can now configure almost all Profile settings
+
+07/04/2010 - New build 1.0.7.34
+
+- Added: Add New Profile Wizard
+- Fixed: Jumplist shortcuts stops working after some time
+-- Skin updates
+--- Verde
+---- Fixed: CFAA Edge Detect shows invalid option when profile is switched from another one that use another AA filter method
+
+- Known issues:
+-- Favorites and Recently played items in Jumplist are not being kept between sessions, it'll be fixed in a future build.
+
+07/03/2010 - New build 1.0.7.33
+
+- Changed: small change in registry key
+
+07/03/2010 - New build 1.0.7.32
+
+- Fixed: rare silent crash after exiting game due to a cross-thread issue causing 3D settings to remain unrestored
+- Fixed: Jumplist's Recently played and Favorites not working on previous builds
+- Fixed: Recently played and Favorites items in Jumplist don't open games if RadeonPro is not running
+- Changed: registry key used to update Catalyst settings reverted to the one used by build 1.0.7.30 and older versions
+-- Skin updates
+--- All
+---- Removed "High Quality AF"
+--- Verde
+---- Changed: CFAA modes now show effective AA in Anti-Aliasing Level as other skins does
+---- Fixed: Global TAA FPS Threshold and Texture LOD list items showing as "Use global setting" when they must show their values even when equals to zero
+---- Fixed: Temporal AA cannot be turned Off in Programs tab
+
+07/02/2010 - New build 1.0.7.31
+
+- Fixed: profiles not being saved automatically after change
+- Changed: Update list is now shown from newest to oldest
+- Changed: registry key used to update Catalyst settings (please report if profiles stops working after updating to this build)
+- New: Pin profiles to Jumplist (Windows 7 only)
+
+07/02/2010 - New build 1.0.7.30
+
+- Fixed: profiles not being saved automatically after change
+
+07/02/2010 - New build 1.0.7.29
+
+- Fixed: error creating jumplist when RadeonPro is configured to start minimized
+- Fixed: start parameters not being saved between sessions
+
+07/02/2010 - New build 1.0.7.28
+
+- New: Windows 7 Jumplists support
+- Fixed: Triggers not activating main profile
+- Fixed: profile items checkboxes get checked after switching from Global scope to Profile scope by clicking on profile list item
+- Fixed: Restored profiles not added to list on skin Verde
+
+07/01/2010 - Updated build 1.0.7.27
+
+-- Skin updates
+--- Fixed: toolbar button for adding new profile is not enabled when there isn't profiles created before starting the program
+
+07/01/2010 - New build 1.0.7.27
+
+- Fixed: options not selectable after switching from Global to Profile scope
+- Fixed: sliders in Advanced tab are changeable when no scope is selected whereas they should be disabled
+
+06/30/2010 - New build 1.0.7.26
+
+- Fixed: triggers showing only filename in somes cases
+-- Skin updates
+--- All except Verde: Catalyst AI mode got hidden due to a reallocation bug
+
+06/30/2010 - New build 1.0.7.25
+
+- Fixed: crash when executable is in root directory
+-- Skin updates
+--- All except Verde: re-added profile list columns width saved between sessions
+--- Verde: Added LOD and TAA FPS Threshold control in profiles to be controllable by global setting
+
+06/30/2010 - New build 1.0.7.24
+
+- Fixed: bugs in global/profile options not clickable in some cases
+- Fixed: profile settings not being applied when video registry key is not standard (e.g. don't use UMD sub-key)
+
+06/30/2010 - New build 1.0.7.23
+
+- New: logic to show RadeonPro window when it's executed but is already running on background
+- Fixed: minor bug in auto-updater
+- Fixed: messages being show while converting profiles to new schema
+-- Skin updates
+--- Verde: Fixed AA/AF Application controlled cannot be selected
+--- Tiny: dropped support for a while, it won't be updated for a few builds until some internal changes are completed
+
+06/29/2010 - New build 1.0.7.22
+
+- Changed: profile activation schema in order to allow different profiles for games that share the same executable name (i.e. Source Engine)
+- Changed: Video card ID search for Video Spoof feature to use local resources instead of looking for ID at external site
+-- Skin updates
+--- All: Fixed Lod Adjustment not saving correctly for Global settings
+--- Verde: Fixed Enable Wait for vertical refresh and Force Triple-buffering (OpenGL) not saving correct values on Programs tab
+--- Verde: Removed header to make up space for profile title
+
+06/28/2010 - New build 1.0.7.21
+
+- Fixed: small bug in Auto-updater
+-- Skin updates
+--- Verde: Some panels don't get enabled when a profile is selected in some cases
+
+06/28/2010 - New build 1.0.7.20
+
+- Fixed: skins refusing to load
+
+06/28/2010 - New build 1.0.7.19
+
+- Changed: some settings in profile now can be left to be controlled by Global setting
+- New updates history dialog. The program will now show a balloon near the tray icon to alert about installed updates
+- Minor changes in Skin engine
+- Several bug fixes in profile management
+- Fixed: restart program feature may fail in some circunstances leaving Support Service stopped
+- Fixed: auto updater version checking not working in some cases
+-- Skin updates
+--- Verde: Tasks tree state (expanded/collapsed items) is now saved between sessions
+--- Verde: Fixed toolbar tooltips
+--- Verde: Added Profile name on top bar
+
+06/24/2010 - New build 1.0.7.18
+
+- New: detection of skins failing to load, the program will start with default skin when a skin fails to load
+- New: backslash as allowed key for shortcuts
+- Fixed: CrossfireX tweaks group incorrectly disabled even when CrossfireX is present
+- Minor changes to Overclocking feature (trying to fix flickering and high CPU usage, please report if you had issues with previous builds)
+-- Skin updates
+--- Verde: Minor bug fixes and internal optimization for better performance
+--- Verde: New toolbar for profile tasks replacing previous controls
+--- Verde: Back/Forward list fix
+
+06/23/2010 - Updated build 1.0.7.17
+
+- Skin Verde updated: options to rename profile, launch, edit startup parameters and open location are back
+
+06/23/2010 - New build 1.0.7.17
+
+- Minor bug fix in Auto-updater
+- Fixed: error in Verde skin, when Programs tab is acessed and there is no profiles created yet an error message is shown
+
+06/23/2010 - New build 1.0.7.16
+
+- Fixed: Auto-updater not checking installed skins version while checking for updates
+
+06/23/2010 - New build 1.0.7.15
+
+- Fixed: profile loaded/unloaded notification sound not works
+- Fixed: error launching/renaming newly created profile
+- Changed: Skin Chooser thumbnails preview image quality
+
+06/18/2010 - New build 1.0.7.14
+
+- New: skin support with skin download option (may have bugs, please report)
+- New: View cache and Clear cache buttons in Settings dialog
+- Fixed: duplicated entries errors while loading profiles or updating tray context menu
+- Fixed: system hangs at system shutdown or system restart when RadeonPro is loaded
+- Fixed: RadeonPro isn't monitored when Support Service is not running at program start
+- Modified error report dialog to allow users to include brief message about how to reproduce the error
+
+06/16/2010 - New build 1.0.7.13
+
+- Fixed: Toggle FPS corner shorcut key was not working
+- Fixed: MSI Afterburn loads when a new profile is created even without a overclock profile choosen, the game is not started until MSI Afterburner is terminated
+- Changed: OSD is now loaded only when FPS or Forced vsync or Forced Triple-buffering is selected in profile
+
+06/15/2010 - New build 1.0.7.12
+
+- Fixed: bug in auto-update check
+
+06/15/2010 - New build 1.0.7.11
+
+- New: Anti-Aliasing and CrossfireX profiles updates through Auto-Updater
+
+06/15/2010 - New build 1.0.7.10
+
+- Changed: Start Minimized setting, now it can be enabled even when Start with Windows is not selected
+- Fixed: trigger not being added on triggers list sometimes
+- Program is UAC compatible again
+
+06/15/2010 - New build 1.0.7.9
+
+- Changed: Start Minimized setting, now it can be enabled even when Start with Windows is not selected
+- Fixed: Tweaks tab being removed when Overclocking tab is selected and OC feature is disabled in Settings dialog
+- Fixed: Auto-updater Continue button never gets ready after downloading updates
+
+06/14/2010 - New build 1.0.7.8
+
+- Fixed: profiles not being applied when RadeonPro is configured to start minimized
+- Fixed: Tweaks tab being removed when Overclocking tab is selected and OC feature is disabled in Settings dialog
+- Fixed: Auto-updater Continue button never gets ready after downloading updates
+
+06/13/2010 - New build 1.0.7.7
+
+- Fixed: error when creating new profile, triggers column incorrectly shows settings
+- Fixed: error while trying to rename a profile in some circunstances
+
+Known issues:
+- When Overclocking tab is selected and Disable overclocking is set in Settings dialog, Tweaks tab gets hidden instead of Overclocking tab
+
+06/13/2010 - New build 1.0.7.6
+
+- New: option to completely disable overclocking tab
+- Tray icon lauch list is now being updated properly
+- Fixed: error while saving settings
+- Fixed: some overclocking related bugs
+- Fixed: Settings dialog not preserving window position and size while saving settings
+
+06/12/2010 - New build 1.0.7.5 HOTFIX online.
+
+- Changed: Global Mutex name for Windows XP Compatibility
+
+06/12/2010 - New build 1.0.7.5 online.
+
+- New: Change (spoof) Video Adapter Vendor/Device ID (Direct3D9 only)
+- Fixed: Abort update button not working in Updater download dialog
+- New: close button to Settings dialog
+- Removed extra www from external links
+- Minor user interface rearrangement
+
+06/11/2010 - New build 1.0.7.4 online.
+
+- Fixed: minor bugs in updater
+- Fixed: installer not updating files in some cases
+- Fixed: driver registry key UMD not found on some systems, will try to read the right place now
+
+Known issues:
+- MSI Afterburner changes in overclock profile crashes RadeonPro
+
+06/11/2010 - New build 1.0.7.3 online.
+
+- MSI Afterburner diagnostics (#2- Program will not finish if error is found)
+
+06/11/2010 - New build 1.0.7.2 online.
+
+- MSI Afterburner diagnostics
+
+06/11/2010 - New build 1.0.7.1 online.
+
+- Improved ATi Tray Tools profiles compatibility
+- New: warning message when setting Anti-Aliasing or CrossfireX compatibility profile for Steam games (currently not supported)
+- Changed: Progress bar in Download dialog, now it's showing current download progress instead of being only animated
+- Fixed: bug in remoting channel creation
+- Fixed: Reset Defaults links enabled when profile scope (Global or Profile) not selected. Now it's disabled when scope's not defined.
+- CrossfireX systems: Fixed Anti-Aliasing 16x not read correctly from registry for Global settings (e.g. CCC is set to AA 16x but in RadeonPro's Global profile AA is set to AA 8x)
+
+06/10/2010 - New build 1.0.7.0 online.
+
+- New program update method. Starting at build 1.0.7.0 just click Check updates to download and update only changed files
+- Changed: profile settings/global settings interface, now Global settings will be changeable only if the user selects the Global profile
+
+06/09/2010 - New build 1.0.6.12 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- Fixed: random program crash when some conditions were met (Compatibility Profile + OC Profile)
+- New: start parameters for profile items
+- New: launch profile from tray icon
+- RadeonPro will ask if it should be restarted when an unexpected crash is detected
+
+06/09/2010 - New build 1.0.6.11 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- Fixed: profile being incorrectly reverted to default
+
+06/09/2010 - New build 1.0.6.10 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- Fixed: "out of range" error for Texture LOD
+- Backup/Restore of RadeonPro profiles
+- RadeonPro Profiles won't interfere anymore with ATi Tray Tools profiles and vice versa
+
+06/09/2010 - New build 1.0.6.9 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- Fixed: installer not detecting RadeonPro running at upgrade time, now the installer will 
+  alert if RadeonPro is running instead of giving errors while trying to replace files in use
+- Fixed: game losing focus (game is minimized and desktop is shown) just after launching it when the following conditions are met: 
+	* Overclocking profile is selected;
+	* MSI Afterburner is not running on background;
+	* An Anti-Aliasing or CrossfireX Compatibility Profile is selected.
+- New: a custom error dialog box with option to send bug report (please use it). No personaly identifiable information is sent, just the RadeonPro's version, Catalyst's information and error details.
+
+06/08/2010 - New build 1.0.6.8 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- New: Force High Priority for game process
+- New: Overclocking support (requires MSI Afterburner 1.5 or newer)
+
+06/06/2010 - New build 1.0.6.7 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- Fixed: a bug with CFAA Edge Detect
+- Changed: Temporal Anti-Aliasing Multipliers to fixed values 2x and 3x
+- New: CPU Affinity mask
+
+06/05/2010 - New build 1.0.6.6 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- Fixed: a random crash while creating communication channel with Support Service
+- Fixed: "out of bounds" error in AA selection
+
+06/05/2010 - New build 1.0.6.5 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- Fixed: a random crash while creating communication channel with Support Service
+
+06/04/2010 - New build 1.0.6.4 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- New: option to disable Windows Aero Glass while running a profile
+- New: preliminary Temporal Anti-Aliasing support
+- Fixed: Supersample AA being interpreted incorrectly at startup
+
+06/03/2010 - New build 1.0.6.3 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- Fixed: triggers not activating profiles
+- Fixed: "out of bounds" error in AA selection
+- New: keyboard modifiers to screenshot and toggle FPS corner shortcuts
+- Re-added drag and drop support
+
+06/02/2010 - New build 1.0.6.2 online. Users of 1.0.5.x builds must uninstall before installing.
+
+- Tooltips for each option
+- Window position and dimensions are now keeped between restarts
+- CrossfireX Anti-Aliasing modes (MSAA 16x, CFAA Narrow-tent 24x and CFAA Wide-tent 32x) now available on CrossfireX systems
+- CFAA Edge-detect fixed.
+
+06/01/2010 - New build 1.0.6.1 online, please uninstall current version before installing.
+
+New features starting at builds 1.0.6.X
+
+- New installer (bilingual)
+- Anti-Aliasing/CrossfireX Profiles Compatibility
+- Global settings now changeable
+- Separated sounds for profile activation/deactivation
+- Play flash sound when taking screenshots
+- Hability to disable CrossfireX in multi-GPU/single cards without turning off Catalyst AI (please test it, I need feedback from Crossfire users using multiple physical video adapters - i.e. not 4870X2/5970)
+- Single profiles can now be activated by multiple executables (add them in Triggers tab)
+- Reset defaults option
+
+Fixed in this build
+
+- Screenshot function should work now.
+- MVPUMode fixes
+- Interface inconsistencies fixes
+- Other minor bug fixes
